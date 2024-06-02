@@ -37,4 +37,6 @@ Route::middleware(['auth', 'adminMiddleware'])->group(function () {
     Route::get('/admin/schedule', [ScheduleController::class, 'index'])->name('admin.schedule');
     Route::get('/admin/user', [UserController::class, 'index'])->name('admin.user');
     Route::get('profile', [AdminController::class, 'index2'])->name('profile.edit');
+    Route::resource('schedule', ScheduleController::class);
+    Route::get('/schedules', [ScheduleController::class, 'index'])->name('schedules.index');
 });
